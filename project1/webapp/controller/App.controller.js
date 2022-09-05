@@ -1,9 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast"
-    // "sap/ui/model/json/JSONModel"
-    // "dtt/project1/model/Models",
-    // "sap/ui/model/resource/ResourceModel"
+    "sap/ui/core/mvc/Controller"
 ],
     /**
      * @param{typeof sap.ui.core.mvc.Controller} Controller
@@ -12,15 +8,15 @@ sap.ui.define([
      * @param{typeof sap.ui.model.resource.ResourceModel} ResourceModel
      */
 
-    function (Controller, MessageToast) {
+    function (Controller) {
         return Controller.extend("dtt.project1.controller.App", {
             onInit: function() {
                          },
-            onShowHello: function () {
-                var oBundle = this.getView().getModel("i18n").getResourceBundle();
-                var sRecipient = this.getView().getModel().getProperty("/recipient/name")
-                var sMSG = oBundle.getText("helloMsg", [sRecipient]);
-                MessageToast.show(sMSG);
+            
+            onOpenDialogHeader: function() {
+                this.getOwnerComponent().openHelloDialog();
+
             }
         });
-    });
+    }
+    );

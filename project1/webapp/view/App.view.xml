@@ -1,11 +1,17 @@
-<mvc:View controllerName="dtt.project1.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <Button id="_IDGenButton1" text="{i18n>showHelloButtonText}" press=".onShowHello">
-    </Button>
-    <Input id="_IDGenInput1" value="{/recipient/name}"
-        description="Input: {/recipient/name}"
-        valueLiveUpdate="true"
-        width="60%"
-    >
-    </Input>
-</mvc:View>
+<mvc:View controllerName="dtt.project1.controller.HelloPanel" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+    <Shell id="_IDGenShell1">
+        <App id="_IDGenApp1">
+            <pages>
+                <Page id="_IDGenPage1" title="{i18n>appTitle}">
+                    <headerContent>
+                        <Button id="HelloDialogHeader" icon="sap-icon://action" press=".onOpenDialogHeader" class="sapUiSmallMarginEnd" />
+                    </headerContent>
 
+                    <content>
+                        <mvc:XMLView id="_IDGenXMLView1" viewName="dtt.project1.view.HelloPanel" />
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
