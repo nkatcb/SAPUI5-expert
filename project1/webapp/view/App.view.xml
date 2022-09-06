@@ -1,18 +1,5 @@
-<mvc:View controllerName="dtt.project1.controller.HelloPanel" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-    <Shell id="_IDGenShell1">
-        <App id="_IDGenApp1">
-            <pages>
-                <Page id="_IDGenPage1" title="{i18n>appTitle}">
-                    <headerContent>
-                        <Button id="HelloDialogHeader" icon="sap-icon://action" press=".onOpenDialogHeader" class="sapUiSmallMarginEnd" />
-                    </headerContent>
-
-                    <content>
-                        <mvc:XMLView id="_IDGenXMLView1" viewName="dtt.project1.view.HelloPanel" />
-                        <mvc:XMLView id="_IDGenXMLView2" viewName="dtt.project1.view.InvoicesList" />
-                    </content>
-                </Page>
-            </pages>
-        </App>
+<mvc:View controllerName="dtt.project1.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+    <Shell id="Shell1">
+        <App id="app" />
     </Shell>
 </mvc:View>

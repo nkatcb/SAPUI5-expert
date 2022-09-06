@@ -1,6 +1,6 @@
 sap.ui.define([
     "dtt/project1/model/models",
-    "sap/ui/model/resource/ResourceModel",
+    //"sap/ui/model/resource/ResourceModel",
     "sap/ui/core/UIComponent",
     "./controller/HelloDialog"
 ],
@@ -9,7 +9,7 @@ sap.ui.define([
      * @param{typeof sap.ui.model.resource.ResourceModel} ResourceModel
      
      */
-    function (models, ResourceModel, UIComponent, HelloDialog) {
+    function (models,  UIComponent, HelloDialog) {
         return UIComponent.extend("dtt.project1.Component", {
 
             metadata: {
@@ -23,11 +23,11 @@ sap.ui.define([
                 );
                 this.setModel(models.createRecipient());
 
-                var i18nModel = new ResourceModel({
-                    bundleName: "dtt.project1.i18n.i18n"
-                });
-                this.setModel(i18nModel, "i18n")
+               // var i18nModel = new ResourceModel({
+               //     bundleName: "dtt.project1.i18n.i18n"});
+            //his.setModel(i18nModel, "i18n")
                 this._helloDialog = new HelloDialog(this.getRootControl());
+                this.getRouter().initialize();
             },
             exit: function () {
                 this._helloDialog.destroy();

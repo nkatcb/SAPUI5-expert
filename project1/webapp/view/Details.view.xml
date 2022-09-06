@@ -1,0 +1,10 @@
+<mvc:View controllerName="dtt.project1.controller.Details" 
+        xmlns="sap.m" 
+        xmlns:mvc="sap.ui.core.mvc" 
+        xmlns:core="sap.ui.core"
+        displayBlock="true">
+        <Page title="{i18n>Detailspagetitle}">
+            <ObjectHeader id="_IDGenObjectHeader1" title="{i18n>invoice}">
+            </ObjectHeader>
+        </Page>
+</mvc:View>

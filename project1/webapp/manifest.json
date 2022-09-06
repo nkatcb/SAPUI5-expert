@@ -16,13 +16,13 @@
       "toolsId": "b0b1675f-e974-485b-8f17-849a78f694b2"
     },
     "dataSources": {
+     
       "mainService": {
-        "uri": "/sap/opu/odata/",
+        "uri": "/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
-          "annotations": [],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "2.0"
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
         }
       }
     }
@@ -68,17 +68,19 @@
         "settings": {
           "bundleName": "dtt.project1.i18n.i18n"
         }
-        
       },
-      "Invoices":{
-          "type": "sap.ui.model.json.JSONModel",
-          "uri": "Invoices.json"
+      "Invoices": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Invoices.json"
       },
-      
-      "": {
+      "northwind": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
       }
     },
     "resources": {
@@ -101,27 +103,41 @@
       "routes": [
         {
           "name": "RouteApp",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
-            "TargetApp"
+            "TargetOverview"
           ]
-        }
+        },
+        {
+            "name": "Details",
+            "pattern": "details/{invoicePath}",
+            "target": [
+              "TargetDetails"
+            ]
+          }
       ],
       "targets": {
-        "TargetApp": {
+        "TargetOverview": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "App",
-          "viewName": "App"
-        }
+          "viewId": "Overview",
+          "viewName": "Overview"
+        },
+        "TargetDetails": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "Details",
+            "viewName": "Details"
+          }
       }
     },
     "rootView": {
       "viewName": "dtt.project1.view.App",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": "app"
     }
   }
 }
