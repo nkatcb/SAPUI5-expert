@@ -9,6 +9,7 @@
 
                     <content>
                         <mvc:XMLView id="_IDGenXMLView1" viewName="dtt.project1.view.HelloPanel" />
+                        <mvc:XMLView id="_IDGenXMLView2" viewName="dtt.project1.view.InvoicesList" />
                     </content>
                 </Page>
             </pages>
